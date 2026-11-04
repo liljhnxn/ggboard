@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="7" fill="#090a0e"/>
+  <rect x="1.5" y="1.5" width="29" height="29" rx="5.5" fill="none" stroke="#ff6200" stroke-width="1.5" stroke-opacity="0.9"/>
+  <text x="16" y="18" text-anchor="middle" dominant-baseline="central" fill="#ff6200" font-family="'Segoe UI', Roboto, system-ui, sans-serif" font-weight="900" font-size="15" letter-spacing="-0.5">GG</text>
+</svg>
+
