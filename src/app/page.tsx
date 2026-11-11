@@ -11,40 +11,21 @@ import { PendingMatchesSection, MatchRecordData } from "@/components/PendingMatc
 import { MatchHistorySection } from "@/components/MatchHistorySection";
 import { LeaderboardSection, RankedPlayer } from "@/components/LeaderboardSection";
 import { Footer } from "@/components/Footer";
-import { Settings, Check, Edit2, ShieldAlert, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { isAddress } from "viem";
 
 export default function Home() {
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
 
-  // Active contract address state (defaults to env or fallback)
-  const [contractAddress, setContractAddress] = useState<`0x${string}`>(DEFAULT_CONTRACT_ADDRESS);
-  const [addressInput, setAddressInput] = useState<string>("");
-  const [showConfig, setShowConfig] = useState(false);
+  // Active Mainnet Contract Address (strictly Mainnet)
+  const contractAddress: `0x${string}` = DEFAULT_CONTRACT_ADDRESS;
 
-  // Sync contract address if saved in localStorage
+  // Clear any legacy testnet cached address from previous sessions
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("ggboard_contract_address");
-      if (saved && isAddress(saved)) {
-        setContractAddress(saved as `0x${string}`);
-        setAddressInput(saved);
-      } else {
-        setAddressInput(contractAddress);
-      }
+      localStorage.removeItem("ggboard_contract_address");
     }
-  }, [contractAddress]);
-
-  const handleSaveContractAddress = () => {
-    if (isAddress(addressInput)) {
-      setContractAddress(addressInput as `0x${string}`);
-      if (typeof window !== "undefined") {
-        localStorage.setItem("ggboard_contract_address", addressInput);
-      }
-      setShowConfig(false);
-      refetchAll();
-    }
-  };
+  }, []);
 
   // 1. Read Total Gamers
   const {
@@ -170,67 +151,54 @@ export default function Home() {
         isRegistered={formattedProfile?.isRegistered}
       />
 
-      {/* Contract configuration banner (if contract is default or configured) */}
-      <div className="bg-[#121520] border-b border-white/5 py-1.5 px-4 text-[11px] font-mono text-warm-400 flex items-center justify-between">
-        <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
-          <div className="flex items-center gap-2 truncate">
-            <span className="w-2 h-2 rounded-full bg-[#ff6200]" />
-            <span className="hidden sm:inline">BOT Chain Mainnet:</span>
+      {/* Verified Mainnet Contract Top Telemetry Bar */}
+      <div className="bg-[#0e111a] border-b border-white/5 py-2 px-4 text-[11px] font-mono text-warm-300">
+        <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          {/* Mainnet status & address */}
+          <div className="flex items-center gap-2.5 truncate">
+            {/* BOT Chain official logo */}
+            <img
+              src="/botchain-logo.png"
+              alt="BOT Chain Logo"
+              className="w-4 h-4 rounded object-contain shrink-0"
+            />
+            <span className="text-emerald-400 font-bold tracking-wide">BOT Chain Mainnet (677):</span>
             <a
               href={`https://scan.botchain.ai/address/${contractAddress}#code`}
               target="_blank"
               rel="noreferrer"
-              className="text-[#ff6200] hover:text-[#ff7a1a] hover:underline font-mono truncate flex items-center gap-1"
-              title="View verified contract on BOT Chain Explorer"
+              className="text-[#ff6200] hover:text-[#ff7a1a] hover:underline font-mono truncate flex items-center gap-1 font-semibold"
+              title="View verified Mainnet contract on BOT Chain Explorer"
             >
               <span>{contractAddress}</span>
               <ExternalLink className="w-3 h-3 shrink-0" />
             </a>
           </div>
 
-          <button
-            onClick={() => setShowConfig(!showConfig)}
-            className="text-[#ff6200] hover:text-[#ff7a1a] flex items-center gap-1 shrink-0 ml-2"
-          >
-            <Settings className="w-3.5 h-3.5" />
-            <span>{showConfig ? "Hide Config" : "Contract Config"}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Contract Address Edit Modal/Drawer */}
-      {showConfig && (
-        <div className="bg-[#10131d] border-b border-[#ff6200]/30 py-4 px-4">
-          <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-3">
-            <div className="flex-1 w-full">
-              <label className="block text-[10px] font-mono uppercase text-warm-400 mb-1">
-                GGBoard Deployed Contract Address (Botchain Mainnet - Chain 677)
-              </label>
-              <input
-                type="text"
-                value={addressInput}
-                onChange={(e) => setAddressInput(e.target.value.trim())}
-                placeholder="0x..."
-                className="w-full px-3 py-1.5 rounded-lg bg-[#161a28] border border-white/10 text-xs font-mono text-white focus:outline-none focus:border-[#ff6200]"
-              />
-            </div>
-            <div className="flex items-center gap-2 w-full sm:w-auto pt-4 sm:pt-4">
-              <button
-                onClick={handleSaveContractAddress}
-                className="px-4 py-2 rounded-lg bg-[#ff6200] hover:bg-[#ff731a] text-white font-bold text-xs font-mono uppercase transition-colors"
-              >
-                Apply Address
-              </button>
-              <button
-                onClick={() => setShowConfig(false)}
-                className="px-3 py-2 rounded-lg bg-[#181d2a] hover:bg-[#202738] text-warm-400 text-xs font-mono"
-              >
-                Cancel
-              </button>
-            </div>
+          {/* Quick Ecosystem Links */}
+          <div className="flex items-center gap-3 shrink-0 text-[10px] text-warm-400">
+            <a
+              href="https://botchain.ai"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white flex items-center gap-1 transition-colors"
+            >
+              <img src="/botchain-logo.png" alt="BOT Chain" className="w-3 h-3 rounded-sm object-contain" />
+              <span>botchain.ai</span>
+            </a>
+            <span>•</span>
+            <a
+              href="https://scan.botchain.ai"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white flex items-center gap-1 transition-colors"
+            >
+              <img src="/botchain-logo.png" alt="BOT Chain" className="w-3 h-3 rounded-sm object-contain" />
+              <span>scan.botchain.ai</span>
+            </a>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Main Single-Page Sections */}
       <main className="flex-1">
@@ -286,4 +254,3 @@ export default function Home() {
     </div>
   );
 }
-

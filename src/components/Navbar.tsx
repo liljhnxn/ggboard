@@ -47,8 +47,9 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
               GGBOARD
               <span className="inline-block w-2 h-2 rounded-full bg-[#ff6200] animate-pulse" />
             </span>
-            <span className="text-[10px] tracking-widest uppercase font-mono text-warm-400">
-              Botchain Mainnet (677)
+            <span className="text-[10px] tracking-widest uppercase font-mono text-warm-400 flex items-center gap-1.5">
+              <img src="/botchain-logo.png" alt="BOT Chain" className="w-3 h-3 rounded-xs object-contain" />
+              <span>BOT Chain Mainnet (677)</span>
             </span>
           </div>
         </a>
@@ -86,9 +87,14 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
 
           {/* Network Badge */}
           {isConnected && !isWrongNetwork && (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#141822] border border-white/10 text-xs font-mono text-warm-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20" />
-              <span>Botchain Mainnet (677)</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#141822] border border-white/10 text-xs font-mono text-warm-300">
+              <img
+                src="/botchain-logo.png"
+                alt="BOT Chain"
+                className="w-3.5 h-3.5 rounded-sm object-contain"
+              />
+              <span>BOT Chain (677)</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-0.5" />
             </div>
           )}
 

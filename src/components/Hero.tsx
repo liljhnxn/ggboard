@@ -32,12 +32,17 @@ export function Hero({ totalGamers, totalMatches, isRegistered, topPlayer }: Her
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Live on Botchain Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161a25] border border-[#ff6200]/30 shadow-sm">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6200] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6200]"></span>
-              </span>
+              <img
+                src="/botchain-logo.png"
+                alt="BOT Chain"
+                className="w-3.5 h-3.5 rounded-sm object-contain"
+              />
               <span className="text-xs font-mono font-medium tracking-wide text-warm-200">
-                100% On-Chain • Botchain Mainnet (677)
+                100% On-Chain • BOT Chain Mainnet (677)
+              </span>
+              <span className="flex h-2 w-2 relative ml-1">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
               </span>
             </div>
 
