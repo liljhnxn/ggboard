@@ -270,7 +270,7 @@ export function RecordMatchSection({
                 {isWaitingTx && (
                   <div className="p-3 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center gap-2">
                     <Loader2 className="w-4 h-4 animate-spin text-amber-400" />
-                    <span>Publishing match to Botchain testnet... Pending confirmation.</span>
+                    <span>Publishing match to BOT Chain Mainnet... Pending confirmation.</span>
                   </div>
                 )}
 

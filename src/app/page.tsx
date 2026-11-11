@@ -11,7 +11,7 @@ import { PendingMatchesSection, MatchRecordData } from "@/components/PendingMatc
 import { MatchHistorySection } from "@/components/MatchHistorySection";
 import { LeaderboardSection, RankedPlayer } from "@/components/LeaderboardSection";
 import { Footer } from "@/components/Footer";
-import { Settings, Check, Edit2, ShieldAlert } from "lucide-react";
+import { Settings, Check, Edit2, ShieldAlert, ExternalLink } from "lucide-react";
 import { isAddress } from "viem";
 
 export default function Home() {
@@ -175,8 +175,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2 truncate">
             <span className="w-2 h-2 rounded-full bg-[#ff6200]" />
-            <span className="hidden sm:inline">Botchain Mainnet Contract:</span>
-            <span className="text-warm-200 truncate">{contractAddress}</span>
+            <span className="hidden sm:inline">BOT Chain Mainnet:</span>
+            <a
+              href={`https://scan.botchain.ai/address/${contractAddress}#code`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#ff6200] hover:text-[#ff7a1a] hover:underline font-mono truncate flex items-center gap-1"
+              title="View verified contract on BOT Chain Explorer"
+            >
+              <span>{contractAddress}</span>
+              <ExternalLink className="w-3 h-3 shrink-0" />
+            </a>
           </div>
 
           <button

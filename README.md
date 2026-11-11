@@ -67,15 +67,10 @@ NEXT_PUBLIC_CONTRACT_ADDRESS=0x5e1ae0a3D053755BB203894dC6C97B951254a7A0
 NEXT_PUBLIC_CHAIN_ID=677
 ```
 
-### 5. Deploy to Botchain
-- To deploy to **Botchain Mainnet**:
-  ```bash
-  npm run deploy:mainnet
-  ```
-- To deploy to **Botchain Testnet**:
-  ```bash
-  npm run deploy:botchain
-  ```
+### 5. Deploy Contract to BOT Chain Mainnet
+```bash
+npm run deploy:mainnet
+```
 The script deploys `GGBoard.sol`, confirms the transaction, verifies gas usage, and outputs the contract artifact and address to `src/contracts/GGBoardDeployment.json`.
 
 ### 6. Run the Next.js Frontend

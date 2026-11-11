@@ -68,7 +68,7 @@
     <path d="M 395 180 L 320 180 C 295 180 280 195 280 225 L 280 285 C 280 315 295 330 320 330 L 390 330 C 410 330 420 315 420 290 L 420 250 L 350 250 L 350 275 L 390 275 L 390 295 C 390 305 385 308 375 308 L 325 308 C 310 308 305 300 305 285 L 305 225 C 305 210 310 202 325 202 L 395 202 Z" fill="url(#ggGrad)" />
   </g>
 
-  <!-- Botchain Testnet Subtext / Pill -->
+  <!-- BOT Chain Mainnet Subtext / Pill -->
   <g transform="translate(186, 370)">
     <rect width="140" height="26" rx="13" fill="#141824" stroke="#ff6200" stroke-width="1.2" opacity="0.9" />
     <text x="70" y="17" fill="#f4f5f7" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" letter-spacing="2" text-anchor="middle">BOTCHAIN</text>

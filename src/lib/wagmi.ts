@@ -4,9 +4,9 @@ import { injected } from "wagmi/connectors";
 
 export const botchainMainnet = defineChain({
   id: 677,
-  name: "Botchain Mainnet",
+  name: "BOT Chain",
   nativeCurrency: {
-    name: "Botchain",
+    name: "BOT Chain",
     symbol: "BOT",
     decimals: 18,
   },
@@ -20,39 +20,14 @@ export const botchainMainnet = defineChain({
   },
   blockExplorers: {
     default: {
-      name: "Botchain Explorer",
+      name: "BOT Chain Explorer",
       url: "https://scan.botchain.ai",
     },
   },
 });
 
-export const botchainTestnet = defineChain({
-  id: 968,
-  name: "Botchain Testnet",
-  nativeCurrency: {
-    name: "Botchain",
-    symbol: "BOHR",
-    decimals: 18,
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://rpc.bohr.life"],
-    },
-    public: {
-      http: ["https://rpc.bohr.life"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "Botchain Explorer",
-      url: "https://scan.bohr.life",
-    },
-  },
-  testnet: true,
-});
-
 export const wagmiConfig = createConfig({
-  chains: [botchainMainnet, botchainTestnet],
+  chains: [botchainMainnet],
   connectors: [
     injected({
       target: "metaMask",
@@ -60,7 +35,6 @@ export const wagmiConfig = createConfig({
   ],
   transports: {
     [botchainMainnet.id]: http(),
-    [botchainTestnet.id]: http(),
   },
   ssr: true,
 });

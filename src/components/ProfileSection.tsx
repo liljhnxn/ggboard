@@ -329,7 +329,7 @@ export function ProfileSection({
               {isWaitingTx && (
                 <div className="p-3 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center gap-2">
                   <Loader2 className="w-4 h-4 animate-spin text-amber-400" />
-                  <span>Registering gamer handle on Botchain Testnet... Please wait for confirmation.</span>
+                  <span>Registering gamer handle on BOT Chain Mainnet... Please wait for confirmation.</span>
                 </div>
               )}
 

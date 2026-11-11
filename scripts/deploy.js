@@ -5,11 +5,10 @@ const path = require("path");
 async function main() {
   const network = await hre.ethers.provider.getNetwork();
   const chainId = Number(network.chainId);
-  const isMainnet = chainId === 677;
 
-  const networkName = isMainnet ? "Botchain Mainnet" : "Botchain Testnet";
-  const currencySymbol = isMainnet ? "BOT" : "BOHR";
-  const explorerBase = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
+  const networkName = "BOT Chain Mainnet";
+  const currencySymbol = "BOT";
+  const explorerBase = "https://scan.botchain.ai";
 
   console.log(`Starting deployment of GGBoard to ${networkName} (Chain ID: ${chainId})...`);
 

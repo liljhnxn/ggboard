@@ -9,12 +9,13 @@ const privateKey = process.env.PRIVATE_KEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
+  defaultNetwork: "botchainMainnet",
   solidity: {
     version: "0.8.20",
     settings: {
       optimizer: {
         enabled: true,
-        runs: 1, // Optimized for lowest deployment bytecode size & minimum deployment gas cost
+        runs: 1, // Optimized for lowest deployment bytecode size & minimum gas cost
       },
     },
   },
@@ -24,16 +25,10 @@ module.exports = {
       chainId: 677,
       accounts: privateKey ? [privateKey] : [],
     },
-    botchain: {
-      url: process.env.BOTCHAIN_RPC_URL || "https://rpc.bohr.life",
-      chainId: 968,
-      accounts: privateKey ? [privateKey] : [],
-    },
   },
   etherscan: {
     apiKey: {
       botchainMainnet: "none",
-      botchain: "none",
     },
     customChains: [
       {
@@ -42,14 +37,6 @@ module.exports = {
         urls: {
           apiURL: "https://scan.botchain.ai/api",
           browserURL: "https://scan.botchain.ai",
-        },
-      },
-      {
-        network: "botchain",
-        chainId: 968,
-        urls: {
-          apiURL: "https://scan.bohr.life/api",
-          browserURL: "https://scan.bohr.life",
         },
       },
     ],

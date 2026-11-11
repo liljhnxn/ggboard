@@ -133,7 +133,7 @@ export function PendingMatchesSection({
         {isWaitingTx && (
           <div className="mb-6 p-4 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center gap-2">
             <Loader2 className="w-4 h-4 animate-spin text-amber-400" />
-            <span>Updating match state on Botchain Testnet... Please wait.</span>
+            <span>Updating match state on BOT Chain Mainnet... Please wait.</span>
           </div>
         )}
 
