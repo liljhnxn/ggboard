@@ -1,10 +1,12 @@
 # GGBOARD WHITEPAPER
 ### Decentralized Peer-Verified Competitive Gaming Scoreboard on Botchain
 
-**Version:** 1.0.0  
-**Network:** Botchain Testnet (Chain ID: 968)  
-**Smart Contract:** `0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261`  
-**Explorer:** [https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261](https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261)  
+**Version:** 1.1.0 (Mainnet Edition)  
+**Network:** Botchain Mainnet (Chain ID: 677)  
+**Native Currency:** BOT (Total Supply: 150,000,000 BOT)  
+**RPC Endpoint:** [https://rpc.botchain.ai](https://rpc.botchain.ai)  
+**Smart Contract:** `0x5e1ae0a3D053755BB203894dC6C97B951254a7A0`  
+**Explorer:** [https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0](https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code)  
 **Author / Team:** GGBoard Core Protocol  
 
 ---
@@ -13,7 +15,7 @@
 
 Competitive gaming records today are fragmented, vulnerable to centralized manipulation, and siloed within proprietary platforms. When a tournament platform shuts down or a centralized database is wiped, a gamer's hard-earned record vanishes.
 
-**GGBoard** is a decentralized, zero-backend Web3 application that permanently anchors competitive gaming profiles, match records, and public leaderboards directly on-chain on **Botchain**. Powered by a single, gas-optimized Solidity smart contract, GGBoard introduces an **Anti-Cheat Peer-Verification Protocol**: match submissions remain in a pending state until cryptographically authenticated by the opponent from their own wallet.
+**GGBoard** is a decentralized, zero-backend Web3 application that permanently anchors competitive gaming profiles, match records, and public leaderboards directly on-chain on **Botchain Mainnet**. Powered by a single, gas-optimized Solidity smart contract, GGBoard introduces an **Anti-Cheat Peer-Verification Protocol**: match submissions remain in a pending state until cryptographically authenticated by the opponent from their own wallet.
 
 With zero databases, zero third-party cloud backends, and no speculative token barriers, GGBoard delivers pure on-chain utility for competitive players.
 
@@ -22,7 +24,7 @@ With zero databases, zero third-party cloud backends, and no speculative token b
 ## 2. Problem Statement
 
 ### 2.1 Centralized Vulnerability & Ephemeral Records
-Traditional esports platforms (such as Smash.gg, Battlefy, or local ladder sites) store player match histories in centralized SQL/NoSQL databases. These records can be altered by administrators, lost due to server deprecation, or forged.
+Traditional esports platforms store player match histories in centralized SQL/NoSQL databases. These records can be altered by administrators, lost due to server deprecation, or forged.
 
 ### 2.2 Unilateral Fraud & Disputed Matches
 In peer-to-peer 1v1 competitive play, false reporting is rampant. Players routinely report inflated scores or claim victories their opponents never conceded. Without trustless confirmation, disputes require manual admin arbitration, causing friction and distrust.
@@ -43,7 +45,7 @@ GGBoard solves these challenges through three core design principles:
 │   100% ON-CHAIN     │   PEER-VERIFIED     │   ZERO-BACKEND      │
 │   All data lives    │   Opponent wallet   │   No database,      │
 │   in Solidity state │   must sign outcome │   no server, pure   │
-│   on Botchain (968) │   before rank updates│   trustless dApp   │
+│   on Botchain (677) │   before rank updates│   trustless dApp   │
 └─────────────────────┴─────────────────────┴─────────────────────┘
 ```
 
@@ -62,7 +64,7 @@ sequenceDiagram
     autonumber
     actor PlayerA as Player 1 (Submitter)
     actor PlayerB as Player 2 (Opponent)
-    participant Contract as GGBoard.sol (Botchain)
+    participant Contract as GGBoard.sol (Botchain Mainnet)
     participant Frontend as GGBoard Frontend (Next.js)
 
     PlayerA->>Contract: submitMatch(opponent, scoreA, scoreB)
@@ -130,7 +132,7 @@ struct MatchRecord {
 
 - **Zero Platform Fees**: GGBoard charges zero protocol fees or cuts.
 - **Gas Optimized**: State transitions use compact `uint32` packing for counters and memory insertion sorting for view-only leaderboard queries, incurring zero gas overhead for querying ranks.
-- **Botchain Advantage**: Leveraging Botchain Testnet (Chain ID 968) guarantees sub-second block times and near-zero gas costs for competitive gamers.
+- **Botchain Mainnet Advantage**: Sub-second block times and minimal gas costs (~0.035 BOT deployment cost) empower gamers to log everyday matches affordably.
 
 ---
 
@@ -147,7 +149,7 @@ struct MatchRecord {
 
 ```mermaid
 flowchart LR
-    A["Phase 1: Core Launch<br/>(Complete)"] --> B["Phase 2: Tournaments<br/>(Q1 2027)"]
+    A["Phase 1: Mainnet Launch<br/>(Live & Verified)"] --> B["Phase 2: Tournaments<br/>(Q1 2027)"]
     B --> C["Phase 3: Multi-Game SDK<br/>(Q2 2027)"]
     C --> D["Phase 4: Botchain AI<br/>(Q3 2027)"]
 
@@ -157,8 +159,8 @@ flowchart LR
     style D fill:#1a1e27,stroke:#ff6200,color:#fff
 ```
 
-1. **Phase 1: Core Foundation (Current / Deployed)**
-   - Deployed and verified on Botchain Testnet (`0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261`).
+1. **Phase 1: Mainnet Launch (Current / Live)**
+   - Deployed and verified on Botchain Mainnet (`0x5e1ae0a3D053755BB203894dC6C97B951254a7A0`).
    - Profile creation, 1v1 match logging, peer confirmation, and public rankings.
 2. **Phase 2: Bracket Tournaments & Guilds (Q1 2027)**
    - Single-elimination smart contract tournaments.
@@ -172,7 +174,7 @@ flowchart LR
 
 ## 8. Conclusion
 
-GGBoard demonstrates that Web3 in gaming does not require speculative tokens or financialized NFTs. By focusing on **trustless verification, immutable records, and peer consensus**, GGBoard provides a transparent, sovereign competitive scoreboard built for gamers, by gamers, on Botchain.
+GGBoard demonstrates that Web3 in gaming does not require speculative tokens or financialized NFTs. By focusing on **trustless verification, immutable records, and peer consensus**, GGBoard provides a transparent, sovereign competitive scoreboard built for gamers, by gamers, on Botchain Mainnet.
 
-**Contract Source Code & Explorer:**  
-[https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261#code](https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261#code)
+**Mainnet Contract & Explorer:**  
+[https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code](https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code)

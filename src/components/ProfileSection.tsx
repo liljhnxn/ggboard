@@ -110,7 +110,7 @@ export function ProfileSection({
             </h2>
           </div>
           <p className="text-sm text-warm-400 mt-2 md:mt-0 font-mono">
-            Identity & match records verified on Botchain (968)
+            Identity & match records verified on Botchain Mainnet (677)
           </p>
         </div>
 
@@ -185,7 +185,7 @@ export function ProfileSection({
                   </div>
                   <div className="pt-1 flex items-center justify-between text-[11px] text-warm-400 font-mono">
                     <a
-                      href={`https://scan.bohr.life/address/${address}`}
+                      href={`https://scan.botchain.ai/address/${address}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-[#ff6200] hover:underline flex items-center gap-1"

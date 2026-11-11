@@ -204,5 +204,5 @@ export const GGBOARD_ABI = [
 ] as const;
 
 export const DEFAULT_CONTRACT_ADDRESS = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ||
-  "0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261") as `0x${string}`;
+  "0x5e1ae0a3D053755BB203894dC6C97B951254a7A0") as `0x${string}`;
 

@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: "GGBoard | On-Chain Gaming Scoreboard & Leaderboard",
   description:
-    "Track your victories, record your matches, and climb the leaderboard. Your gaming achievements, permanently recorded on-chain on Botchain Testnet.",
+    "Track your victories, record your matches, and climb the leaderboard. Your gaming achievements, permanently recorded on-chain on Botchain Mainnet.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",

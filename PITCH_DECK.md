@@ -1,10 +1,11 @@
-# GGBOARD — PITCH DECK
+# GGBOARD — PITCH DECK (MAINNET EDITION)
 
 **Tagline:** Your Game. Your Record. Your Glory.  
-**Elevator Pitch:** The decentralized, peer-verified competitive gaming scoreboard on Botchain where matches, statistics, and leaderboards are 100% permanently recorded on-chain.  
-**Live Network:** Botchain Testnet (Chain ID: 968)  
-**Contract Address:** `0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261`  
-**Explorer:** [https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261#code](https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261#code)  
+**Elevator Pitch:** The decentralized, peer-verified competitive gaming scoreboard on Botchain Mainnet where matches, statistics, and leaderboards are 100% permanently recorded on-chain.  
+**Network:** Botchain Mainnet (Chain ID: 677)  
+**Native Currency:** BOT (150M Total Supply)  
+**Contract Address:** `0x5e1ae0a3D053755BB203894dC6C97B951254a7A0`  
+**Explorer:** [https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code](https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code)  
 
 ---
 
@@ -74,24 +75,24 @@
 
 ---
 
-## 🌐 SLIDE 7: Why Botchain?
+## 🌐 SLIDE 7: Why Botchain Mainnet?
 * **Sub-Second Block Times:** Gamers experience instant submission and confirmation responsiveness.
-* **Ultra-Low Gas Costs:** Micro-cents per transaction make logging every casual or ranked match viable.
+* **Ultra-Low Gas Costs:** Efficient gas usage (~0.035 BOT deployment cost) makes logging every match viable.
 * **AI Ecosystem Synergies:** Future integration with `@botchain_ai` autonomous agents for matchmaking, predictive analytics, and automated tournament adjudication.
 
 ---
 
 ## 📊 SLIDE 8: Current Traction & Status
-* **Status:** ✅ Mainnet-ready contract deployed & verified on Botchain Testnet.
-* **Contract Address:** `0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261`
-* **Testnet Chain ID:** `968`
-* **Explorer Verification:** 100% verified source code on Bohr Scan.
+* **Status:** ✅ Live & verified on Botchain Mainnet!
+* **Contract Address:** `0x5e1ae0a3D053755BB203894dC6C97B951254a7A0`
+* **Mainnet Chain ID:** `677`
+* **Explorer Verification:** 100% verified source code on Botchain Scan.
 * **Repository:** Publicly available on GitHub with complete deployment scripts & test suite.
 
 ---
 
 ## 🚀 SLIDE 9: Roadmap
-* **Phase 1 (Complete):** Core protocol, peer-verification engine, responsive one-page dApp, Botchain deployment.
+* **Phase 1 (Live):** Core protocol, peer-verification engine, responsive one-page dApp, Botchain Mainnet deployment.
 * **Phase 2 (Q1 2027):** Smart contract single-elimination tournament brackets & clan/guild leaderboards.
 * **Phase 3 (Q2 2027):** Lightweight game developer SDK (Unity / Unreal Engine) for automated match reporting.
 * **Phase 4 (Q3 2027):** AI-powered competitive matchmaking and automated dispute analysis via Botchain AI.
@@ -101,7 +102,7 @@
 ## 🤝 SLIDE 10: Summary & Links
 * **Mission:** Establish the universal, trustless competitive gaming record for Web3.
 * **Live App:** Localhost / Vercel ready
-* **Smart Contract:** `0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261`
-* **Explorer Link:** [scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261](https://scan.bohr.life/address/0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261)
+* **Smart Contract:** `0x5e1ae0a3D053755BB203894dC6C97B951254a7A0`
+* **Explorer Link:** [scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0](https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code)
 * **GitHub:** [github.com/liljhnxn/ggboard](https://github.com/liljhnxn/ggboard)
 * **Contact & Community:** `@botchain_ai` Ecosystem

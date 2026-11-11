@@ -1,8 +1,12 @@
 {
-  "address": "0x2b71aC6efA1b587C8Bf08881A0eb79cc72D34261",
-  "chainId": 968,
-  "network": "Botchain Testnet",
-  "deployedAt": "2026-11-04T15:31:01.818Z",
+  "address": "0x5e1ae0a3D053755BB203894dC6C97B951254a7A0",
+  "chainId": 677,
+  "network": "Botchain Mainnet",
+  "currencySymbol": "BOT",
+  "deployedAt": "2026-11-11T07:38:00.831Z",
+  "txHash": "0xdb31b86241e5ad8a95028928d41228c4329fc2c276794727f420aa8bc8ce3cf8",
+  "gasUsed": "1764061",
+  "actualCost": "0.03528122",
   "abi": [
     {
       "inputs": [],

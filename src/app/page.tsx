@@ -175,7 +175,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2 truncate">
             <span className="w-2 h-2 rounded-full bg-[#ff6200]" />
-            <span className="hidden sm:inline">Botchain Testnet Contract:</span>
+            <span className="hidden sm:inline">Botchain Mainnet Contract:</span>
             <span className="text-warm-200 truncate">{contractAddress}</span>
           </div>
 
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-3">
             <div className="flex-1 w-full">
               <label className="block text-[10px] font-mono uppercase text-warm-400 mb-1">
-                GGBoard Deployed Contract Address (Botchain Testnet - Chain 968)
+                GGBoard Deployed Contract Address (Botchain Mainnet - Chain 677)
               </label>
               <input
                 type="text"

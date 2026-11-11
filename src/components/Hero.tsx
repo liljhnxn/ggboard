@@ -37,7 +37,7 @@ export function Hero({ totalGamers, totalMatches, isRegistered, topPlayer }: Her
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff6200]"></span>
               </span>
               <span className="text-xs font-mono font-medium tracking-wide text-warm-200">
-                100% On-Chain • Botchain Testnet (968)
+                100% On-Chain • Botchain Mainnet (677)
               </span>
             </div>
 

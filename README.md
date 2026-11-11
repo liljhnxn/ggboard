@@ -1,6 +1,6 @@
 # GGBoard 🎮 ⚔️
 
-**GGBoard** is a decentralized, on-chain gaming scoreboard built on **Botchain Testnet (Chain ID: 968)**. Gamers register immutable gaming profiles, record 1v1 match results, peer-verify outcomes with cryptographic confirmation, track battle statistics, and compete on a transparent public leaderboard.
+**GGBoard** is a decentralized, on-chain gaming scoreboard deployed on **Botchain Mainnet (Chain ID: 677)**. Gamers register immutable gaming profiles, record 1v1 match results, peer-verify outcomes with cryptographic confirmation, track battle statistics, and compete on a transparent public leaderboard.
 
 ---
 
@@ -13,15 +13,17 @@
 
 ---
 
-## 🌐 Network Specifications (Botchain Testnet)
+## 🌐 Network Specifications (Botchain Mainnet)
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Currency Symbol** | `BOHR` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **Native Token** | `BOT` (18 Decimals) |
+| **Total Supply** | `150,000,000 BOT` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Mainnet Contract** | [`0x5e1ae0a3D053755BB203894dC6C97B951254a7A0`](https://scan.botchain.ai/address/0x5e1ae0a3D053755BB203894dC6C97B951254a7A0#code) |
 
 ---
 
@@ -60,16 +62,21 @@ cp .env.example .env
 Populate `.env` with your deployment private key:
 ```env
 PRIVATE_KEY=your_private_key_here
-BOTCHAIN_RPC_URL=https://rpc.bohr.life
-NEXT_PUBLIC_CONTRACT_ADDRESS=
+BOTCHAIN_MAINNET_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x5e1ae0a3D053755BB203894dC6C97B951254a7A0
+NEXT_PUBLIC_CHAIN_ID=677
 ```
 
-### 5. Deploy to Botchain Testnet
-Run the deployment script:
-```bash
-npm run deploy:botchain
-```
-The script deploys `GGBoard.sol` to Botchain Testnet (Chain ID: 968) and outputs the deployed address to `src/contracts/GGBoardDeployment.json`.
+### 5. Deploy to Botchain
+- To deploy to **Botchain Mainnet**:
+  ```bash
+  npm run deploy:mainnet
+  ```
+- To deploy to **Botchain Testnet**:
+  ```bash
+  npm run deploy:botchain
+  ```
+The script deploys `GGBoard.sol`, confirms the transaction, verifies gas usage, and outputs the contract artifact and address to `src/contracts/GGBoardDeployment.json`.
 
 ### 6. Run the Next.js Frontend
 ```bash
@@ -113,4 +120,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - `submitMatch`: Prevents playing against self (`msg.sender != opponent`), verifies opponent is registered, and prevents tied scores.
 - `confirmMatch`: Only the designated opponent (`playerTwo == msg.sender`) can confirm a pending match. Once confirmed, status changes to `Confirmed` and prevents double execution.
 - `rejectMatch`: Only the designated opponent can reject an incorrect match. Statistics are never altered.
-

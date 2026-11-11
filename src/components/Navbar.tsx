@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
-import { botchainTestnet } from "@/lib/wagmi";
+import { botchainMainnet } from "@/lib/wagmi";
 import { Shield, Swords, Trophy, History, Wallet, ChevronDown, LogOut, AlertTriangle, ExternalLink, Menu, X } from "lucide-react";
 
 interface NavbarProps {
@@ -18,7 +18,7 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const isWrongNetwork = isConnected && chain?.id !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chain?.id !== botchainMainnet.id;
 
   const truncateAddress = (addr: string) => {
     return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
@@ -48,7 +48,7 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
               <span className="inline-block w-2 h-2 rounded-full bg-[#ff6200] animate-pulse" />
             </span>
             <span className="text-[10px] tracking-widest uppercase font-mono text-warm-400">
-              Botchain On-Chain Hub
+              Botchain Mainnet (677)
             </span>
           </div>
         </a>
@@ -75,12 +75,12 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
           {/* Wrong Network Indicator */}
           {isWrongNetwork && (
             <button
-              onClick={() => switchChain({ chainId: botchainTestnet.id })}
+              onClick={() => switchChain({ chainId: botchainMainnet.id })}
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-semibold hover:bg-amber-500/25 transition-all animate-pulse"
-              title="Click to switch to Botchain Testnet"
+              title="Click to switch to Botchain Mainnet"
             >
               <AlertTriangle className="w-4 h-4 text-amber-400" />
-              <span>Switch to Botchain</span>
+              <span>Switch to Mainnet</span>
             </button>
           )}
 
@@ -88,7 +88,7 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
           {isConnected && !isWrongNetwork && (
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#141822] border border-white/10 text-xs font-mono text-warm-300">
               <span className="w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20" />
-              <span>Botchain Testnet (968)</span>
+              <span>Botchain Mainnet (677)</span>
             </div>
           )}
 
@@ -131,7 +131,7 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
                     <p className="text-[11px] font-mono uppercase text-warm-400">Connected Wallet</p>
                     <p className="text-xs font-mono text-warm-200 break-all">{address}</p>
                     <a
-                      href={`https://scan.bohr.life/address/${address}`}
+                      href={`https://scan.botchain.ai/address/${address}`}
                       target="_blank"
                       rel="noreferrer"
                       className="mt-1 text-[11px] text-[#ff6200] hover:underline flex items-center gap-1"
@@ -184,10 +184,10 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
           </div>
           {isWrongNetwork && (
             <button
-              onClick={() => switchChain({ chainId: botchainTestnet.id })}
+              onClick={() => switchChain({ chainId: botchainMainnet.id })}
               className="w-full py-2 px-3 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-semibold text-center border border-amber-500/40"
             >
-              Switch to Botchain Testnet
+              Switch to Botchain Mainnet
             </button>
           )}
           {!isConnected ? (
@@ -216,4 +216,3 @@ export function Navbar({ username, isRegistered }: NavbarProps) {
     </header>
   );
 }
-

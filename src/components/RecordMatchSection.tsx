@@ -334,7 +334,7 @@ export function RecordMatchSection({
               </div>
 
               <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-warm-400">
-                Network: Botchain Testnet • Chain ID: 968
+                Network: Botchain Mainnet • Chain ID: 677
               </div>
             </div>
           </div>

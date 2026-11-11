@@ -300,7 +300,7 @@ export function LeaderboardSection({ leaderboard, isLoading }: LeaderboardSectio
                         {/* Wallet Address */}
                         <td className="py-4 px-4 sm:px-6 whitespace-nowrap hidden sm:table-cell font-mono text-xs text-warm-400">
                           <a
-                            href={`https://scan.bohr.life/address/${player.playerAddress}`}
+                            href={`https://scan.botchain.ai/address/${player.playerAddress}`}
                             target="_blank"
                             rel="noreferrer"
                             className="hover:text-[#ff6200] hover:underline inline-flex items-center gap-1"

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Shield, ExternalLink, Flame } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface FooterProps {
   contractAddress: string;
@@ -28,16 +28,16 @@ export function Footer({ contractAddress }: FooterProps) {
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-[11px]">
             <a
-              href="https://rpc.bohr.life"
+              href="https://rpc.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="hover:text-[#ff6200] transition-colors"
             >
-              RPC: https://rpc.bohr.life
+              RPC: https://rpc.botchain.ai
             </a>
             <span>•</span>
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="hover:text-[#ff6200] transition-colors"
@@ -45,7 +45,9 @@ export function Footer({ contractAddress }: FooterProps) {
               Botchain Explorer
             </a>
             <span>•</span>
-            <span>Chain ID: 968</span>
+            <span>Chain ID: 677</span>
+            <span>•</span>
+            <span>Native Token: BOT</span>
           </div>
 
           <div className="text-center md:text-right">
@@ -53,7 +55,7 @@ export function Footer({ contractAddress }: FooterProps) {
               Contract Address:
             </div>
             <a
-              href={`https://scan.bohr.life/address/${contractAddress}`}
+              href={`https://scan.botchain.ai/address/${contractAddress}`}
               target="_blank"
               rel="noreferrer"
               className="text-[#ff6200] hover:underline flex items-center justify-center md:justify-end gap-1"
@@ -65,10 +67,9 @@ export function Footer({ contractAddress }: FooterProps) {
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/5 text-center text-[10px] text-warm-600">
-          No backend • No centralized database • 100% On-Chain Solidity Smart Contract
+          No backend • No centralized database • 100% On-Chain Solidity Smart Contract • Botchain Mainnet
         </div>
       </div>
     </footer>
   );
 }
-
